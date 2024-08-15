@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "7cb9ff1b-f107-4238-82f9-4fb1751efad3",
+		"name": "Ticket Purchase",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37690689"
+	},
+	"item": [
+		{
+			"name": "User Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"user\",\r\n  \"password\": \"userpass\",\r\n  \"role\": \"user\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"admincharlotte\",\r\n  \"password\": \"adminpassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Ticket",
+			"protocolProfileBehavior": {
+				"strictSSL": true,
+				"followRedirects": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmUwNjBiMTIzMzA0M2Q1YzQwM2UyYiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMzcyOTQ0MSwiZXhwIjoxNzIzNzMzMDQxfQ.t3Woi0BBax__Gvs1L8VheswVjp9T76c0clpUUWk-q2E",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"eventName\": \"Price test\",\r\n  \"eventDate\": \"2024-09-15\",\r\n  \"eventTime\": \"19:00\",\r\n  \"venue\": \"Madison Square Garden\",\r\n  \"category\":\"VIP\",\r\n  \"price\":\"10000\",\r\n  \"availableTickets\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tickets/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tickets",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Ticket",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmUwNjBiMTIzMzA0M2Q1YzQwM2UyYiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMzcyOTQ0MSwiZXhwIjoxNzIzNzMzMDQxfQ.t3Woi0BBax__Gvs1L8VheswVjp9T76c0clpUUWk-q2E",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/tickets/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tickets",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Ticket By ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmUwNjBiMTIzMzA0M2Q1YzQwM2UyYiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMzcyOTQ0MSwiZXhwIjoxNzIzNzMzMDQxfQ.t3Woi0BBax__Gvs1L8VheswVjp9T76c0clpUUWk-q2E",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/tickets/getById/66be06351233043d5c403e2f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tickets",
+						"getById",
+						"66be06351233043d5c403e2f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Ticket",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmUwNjBiMTIzMzA0M2Q1YzQwM2UyYiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMzcyOTYyMiwiZXhwIjoxNzIzNzMzMjIyfQ.mXaTCGqa0XqO6r9xMov-AolLqLfMjPKVmDWmJTVW3pY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/tickets/delete/66be06351233043d5c403e2f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tickets",
+						"delete",
+						"66be06351233043d5c403e2f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Ticket",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmUwNjBiMTIzMzA0M2Q1YzQwM2UyYiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMzcyOTcxNCwiZXhwIjoxNzIzNzMzMzE0fQ.7QXJip5Tf5zwRKPDLxao3WW9vNpB29PlnENeF2r6vHQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"eventName\": \"Updated Charlotte Event Name Test\",\r\n  \"date\": \"2024-09-15\",\r\n  \"time\": \"19:00\",\r\n  \"venue\": \"Updated Venue\",\r\n  \"availableTickets\": 50\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tickets/update/66be06601233043d5c403e34",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tickets",
+						"update",
+						"66be06601233043d5c403e34"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Tickets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/tickets/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tickets",
+						"search"
+					],
+					"query": [
+						{
+							"key": "eventName",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Purchase Tickets",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmUwNjBiMTIzMzA0M2Q1YzQwM2UyYiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMzczMTMyMCwiZXhwIjoxNzIzNzM0OTIwfQ.n3GqsrMsskpf5DpcnyrI_8mvqxqr6Gm74aXosDMbrWI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"ticketId\": \"66be06601233043d5c403e34\",\r\n  \"quantity\": 10\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/tickets/purchase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tickets",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Purchase History",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YmUwNjBiMTIzMzA0M2Q1YzQwM2UyYiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMzczMTMyMCwiZXhwIjoxNzIzNzM0OTIwfQ.n3GqsrMsskpf5DpcnyrI_8mvqxqr6Gm74aXosDMbrWI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/tickets/purchase/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tickets",
+						"purchase",
+						"history"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
