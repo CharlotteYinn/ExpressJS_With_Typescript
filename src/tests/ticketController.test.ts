@@ -11,7 +11,7 @@ app.post('/api/tickets/create', createTicket);
 
 // Mock Mongoose connection
 beforeAll(async () => {
-  await mongoose.connect('mongodb://localhost:27017/ticketdb', { useNewUrlParser: true, useUnifiedTopology: true });
+  await mongoose.connect('mongodb://localhost:27017/ticketdb', { });
 });
 
 // Clean up the database after each test
