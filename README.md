@@ -1,5 +1,5 @@
-# ExpressJS_With_Typescript
-Ticket Purchase Managment API using ExpressJS,MongoDB and Typescript
+Ticket Purchase Managment System
+Develop Backend APIs using ExpressJS,MongoDB,Typescript and Jest Unit Testing
 
 #Rename .env.example to .env
 
@@ -16,3 +16,7 @@ npm install --save-dev jest @types/jest ts-jest supertest @types/supertest
 #Run the project using the following command
 
 npm start
+
+#Check Unit Test
+
+npm test
