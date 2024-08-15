@@ -21,3 +21,7 @@ npm start
 #Check Unit Test
 
 npm test
+
+#For API testing 
+
+Please download this postman collection "Ticket Purchase.postman_collection.json" 
