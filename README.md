@@ -1,6 +1,6 @@
 #Ticket Purchase Managment System
 
-Develop Backend APIs using ExpressJS,MongoDB,Typescript and Jest Unit Testing
+Develop Backend APIs using Express.JS,MongoDB,TypeScript and Jest Unit Testing
 
 #Rename .env.example to .env
 
